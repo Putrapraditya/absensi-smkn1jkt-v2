@@ -14,9 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::view('/', 'home');
-Route::view('/about', 'about')->name('about');
-Route::view('/blog', 'blog')->name('blog');
+Route::redirect('/', '/login');
 
 
 Route::middleware([

@@ -1,48 +1,67 @@
 <x-guest-layout>
-    <x-authentication-card>
-        <x-slot name="logo">
-            <x-authentication-card-logo />
-        </x-slot>
+    <x-slot name="logo">
+    </x-slot>
+    <section>
+        <div class="box">
+            <div class="boxContainer">
+                <div class="form">
+                    <center><img src="/assets/img/logo.png" width="80" style="margin-bottom: 20px" alt="Logo">
+                        <h2>E-Absensi - SMKN 1 Jakarta</h2>
+                    </center>
+                    <x-validation-errors class="mb-4" />
 
-        <x-validation-errors class="mb-4" />
+                    @if (session('status'))
+                        <div class="mb-4 text-sm font-medium text-green-600">
+                            {{ session('status') }}
+                        </div>
+                    @endif
+                    <form method="POST" action="{{ route('login') }}">
+                        @csrf
+                        <div class="inputBox">
+                            <input type="text" placeholder="Username" name="email" :value="old('email')" required
+                                autofocus autocomplete="username">
+                        </div>
+                        <div class="inputBox">
+                            <input type="password" id="passwordField" placeholder="Password" name="password" required
+                                autocomplete="current-password">
+                            <i id="passwordToggle" class="bx bx-show"></i>
+                        </div>
+                        <style>
+                            #passwordToggle {
+                                position: absolute;
+                                right: 60px;
+                                top: 333px;
+                                font-size: 22px;
+                                color: #fff;
+                                transform: translateY(-50%);
+                                cursor: pointer;
+                            }
+                        </style>
+                        <script>
+                            const passwordField = document.getElementById("passwordField");
+                            const passwordToggle = document.getElementById("passwordToggle");
 
-        @if (session('status'))
-            <div class="mb-4 font-medium text-sm text-green-600">
-                {{ session('status') }}
+                            passwordToggle.addEventListener("click", function() {
+                                if (passwordField.type === "password") {
+                                    passwordField.type = "text";
+                                    passwordToggle.classList.remove("bx-show");
+                                    passwordToggle.classList.add("bx-hide");
+                                } else {
+                                    passwordField.type = "password";
+                                    passwordToggle.classList.remove("bx-hide");
+                                    passwordToggle.classList.add("bx-show");
+                                }
+                            });
+                        </script>
+                        <div class="inputBox">
+                            <center><button type="submit">Masuk Aplikasi</button></center>
+                        </div>
+                        <p align="center" class="forget">Lupa Kata Sandi? <a href="#">Reset Kata sandi</a></p>
+                    </form>
+                </div>
             </div>
-        @endif
-
-        <form method="POST" action="{{ route('login') }}">
-            @csrf
-
-            <div>
-                <x-label for="email" value="{{ __('Email') }}" />
-                <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus autocomplete="username" />
-            </div>
-
-            <div class="mt-4">
-                <x-label for="password" value="{{ __('Password') }}" />
-                <x-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="current-password" />
-            </div>
-
-            <div class="block mt-4">
-                <label for="remember_me" class="flex items-center">
-                    <x-checkbox id="remember_me" name="remember" />
-                    <span class="ml-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
-                </label>
-            </div>
-
-            <div class="flex items-center justify-end mt-4">
-                @if (Route::has('password.request'))
-                    <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('password.request') }}">
-                        {{ __('Forgot your password?') }}
-                    </a>
-                @endif
-
-                <x-button class="ml-4">
-                    {{ __('Log in') }}
-                </x-button>
-            </div>
-        </form>
-    </x-authentication-card>
+            <p style="margin-top: 20px; color: #fff" align="center"><small>&copy;{{ now()->year }}
+                    e-absensi by SMK Negeri 1 Jakarta</small></p>
+        </div>
+    </section>
 </x-guest-layout>

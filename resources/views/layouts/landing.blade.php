@@ -122,40 +122,6 @@
                                 <a class="nav-link dropdown-toggle" href="index-03.html#" data-bs-toggle="dropdown">
                                     Profile
                                 </a>
-                                <ul class="dropdown-menu">
-                                    <li>
-                                        <a class="dropdown-item" href="{{ route('about') }}">Tentang</a>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item"
-                                            href="https://www.pxdraft.com/demo/crikon/html/pages/services.html">Struktur
-                                            Kepengurusan</a>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item"
-                                            href="https://www.pxdraft.com/demo/crikon/html/pages/portfolio.html">Visi &
-                                            Misi</a>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item"
-                                            href="https://www.pxdraft.com/demo/crikon/html/pages/contact.html">Galeri</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('blog') }}">
-                                    Blog
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="https://nextc.siotics.org">
-                                    Projects
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="https://nextc.siotics.org">
-                                    NextCloud
-                                </a>
                             </li>
                             <ul class="gap-2 mt-2 d-md-flex list-unstyled mt-md-0">
                                 <li class="mt-1 col-md-6 col-12">
