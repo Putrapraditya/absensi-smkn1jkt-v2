@@ -27,7 +27,7 @@ Route::middleware([
     [DashboardController::class, 'index']
 )->name('dashboard');
 
-Route::middleware(['auth', 'admin'])->group(function () {
+Route::middleware(['role:1'])->group(function () {
     // Rute yang hanya dapat diakses oleh admin
     Route::get('/siswa', [SiswaController::class,'index'])->name('siswa.index');
 
