@@ -53,7 +53,7 @@
                 </a>
                 <ul class="sidebar-dropdown-menu">
                     <li class="sidebar-dropdown-menu-item">
-                        <a href="ksXII.php">
+                        <a href="{{ route('siswa.index') }}">
                             Data Siswa
                         </a>
                     </li>

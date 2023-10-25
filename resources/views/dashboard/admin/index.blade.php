@@ -20,7 +20,7 @@
                         <div>
                             <i class="top-0 mb-2 ri-user-line summary-icon bg-primary position-absolute start-50 translate-middle"></i>
                         </div>
-                        <h5 class="mt-5 card-title">DATA GURU</h5>
+                        <h5 class="mt-5 card-title">REKAP PRESENSI</h5>
                         <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
                         <a href="#" class="btn btn-outline-primary">Lihat selengkapnya</a>
                     </div>

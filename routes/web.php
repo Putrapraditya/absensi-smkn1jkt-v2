@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\SiswaController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -26,4 +27,8 @@ Route::middleware([
     [DashboardController::class, 'index']
 )->name('dashboard');
 
+Route::middleware(['auth', 'admin'])->group(function () {
+    // Rute yang hanya dapat diakses oleh admin
+    Route::get('/siswa', [SiswaController::class,'index'])->name('siswa.index');
 
+});
