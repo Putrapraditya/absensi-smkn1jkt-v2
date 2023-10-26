@@ -3,19 +3,24 @@
 namespace App\Http\Controllers;
 use Yajra\DataTables\DataTables;
 use Illuminate\Http\Request;
+use App\Models\Siswa;
 
 
 class SiswaController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
+   
+    public function index(Request $request)
     {
 
          return view('dashboard.admin.siswa');
     }
 
+    public function data()
+    {
+        $siswa = Siswa::select(['NIS', 'NAMA_LENGKAP', 'KELAS', 'JURUSAN']);
+
+        return DataTables::of($siswa)->make(true);
+    }
     /**
      * Show the form for creating a new resource.
      */
@@ -37,7 +42,7 @@ class SiswaController extends Controller
      */
     public function show(string $id)
     {
-        //
+ 
     }
 
     /**

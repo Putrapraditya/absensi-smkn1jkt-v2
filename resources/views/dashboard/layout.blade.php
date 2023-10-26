@@ -25,6 +25,10 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="assets/css/custom.css">
 
+    {{-- datatables --}}
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
     <!-- Custom JavaScript -->
     <script src="assets/js/main.js"></script>
 </head>
@@ -295,7 +299,21 @@
             <!--app-content close-->
 
         @stack('modals')
-
+        @stack('scripts')
         @livewireScripts
     </body>
+        <!-- DATA TABLE JS-->
+        <script src="../assets/datatable/js/jquery.dataTables.min.js"></script>
+        <script src="../assets/datatable/js/dataTables.bootstrap5.js"></script>
+        <script src="../assets/datatable/js/dataTables.buttons.min.js"></script>
+        <script src="../assets/datatable/js/buttons.bootstrap5.min.js"></script>
+        <script src="../assets/datatable/js/jszip.min.js"></script>
+        <script src="../assets/datatable/pdfmake/pdfmake.min.js"></script>
+        <script src="../assets/datatable/pdfmake/vfs_fonts.js"></script>
+        <script src="../assets/datatable/js/buttons.html5.min.js"></script>
+        <script src="../assets/datatable/js/buttons.print.min.js"></script>
+        <script src="../assets/datatable/js/buttons.colVis.min.js"></script>
+        <script src="../assets/datatable/dataTables.responsive.min.js"></script>
+        <script src="../assets/datatable/responsive.bootstrap5.min.js"></script>
+        <script src="../assets/js/table-data.js"></script>
 </html>
